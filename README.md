@@ -1,1 +1,4 @@
 # expo-evaluacion
+
+# # TODO
+HACER LA API, SERIALIZERS, APIVIEWS, ETC
