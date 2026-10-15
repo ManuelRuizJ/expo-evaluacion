@@ -7,9 +7,15 @@ class EvaluadorSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ProyectoSerializer(serializers.ModelSerializer):
+    promedio = serializers.SerializerMethodField()
     class Meta:
         model = Proyecto
-        fields = '__all__'
+        fields = ['id', 'titulo', 'equipo', 'categoria', 'promedio', 'evaluadores']
+
+    def get_promedio(self, obj):
+        return round(obj.promedio_puntaje, 0)
+
+
 
 class CalificacionSerializer(serializers.ModelSerializer):
     class Meta:
